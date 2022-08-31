@@ -1,0 +1,21 @@
+APAGAR ANTES DE SUBIR PRA NUVEM!
+
+=> 24/08/22 19h04  
+    Problema 1
+    Parei na metade da aula 210 do blog. Não consegui "imprimir o nome da categoria na aba da página"
+    Parece que meu {% block title %} não funciona. Não sei o por quê.
+    
+    Problema 2 
+    Outra coisa pendente... Não consegui usar mysql nesse projeto. Estou usando sqlite3.
+    Por hoje já deu!
+
+=> 29/08/22 resolvido problema 1. O problema 2 permanece.
+
+=> 30/08/22 21h03
+    Problema 2 continua pendente.
+    Consegui gerar a chave ssh e conectar com o GCP. Mas aí eu fiz da forma que ensinam no canal "Ricardo Merces", no YT.
+    Para reduzir o consumo de recurso do GCP, parei o servidor. Antes de dar um "ssh 35.247.207.104" no terminal preciso lembrar de iniciá-lo.
+    O próximo passo é subir o projeto para o GCP.
+
+
+
