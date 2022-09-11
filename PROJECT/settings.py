@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*mb9n*fn=t6em4f7ntdom^p#v+h-vl_isz_92$(_3p$#1z@gb5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['35.247.207.104']
-
+# ALLOWED_HOSTS = ['35.247.207.104']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -160,7 +160,13 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SECURE_PROXY_SSL_HEADER = None
-# SECURE_SSL_REDIRECT = None
-# SESSION_COOKIE_SECURE = None
-# CSRF_COOKIE_SECURE = None
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+try:
+    from .local_settings import *
+except:
+    pass
