@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-*mb9n*fn=t6em4f7ntdom^p#v+h-vl_isz_92$(_3p$#1z@gb5
 DEBUG = True
 
 # ALLOWED_HOSTS = ['35.247.207.104']
+# ALLOWED_HOSTS = ['remediando.com.br']
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -160,13 +161,10 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-
-
-try:
-    from .local_settings import *
-except:
-    pass
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
