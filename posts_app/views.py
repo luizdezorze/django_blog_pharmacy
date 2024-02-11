@@ -1,10 +1,11 @@
-from comments_app.forms import FormComment
-from comments_app.models import Comment
 from django.contrib import messages
 from django.db.models import Case, Count, Q, When
 from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
+
+from comments_app.forms import FormComment
+from comments_app.models import Comment
 
 from .models import Post
 

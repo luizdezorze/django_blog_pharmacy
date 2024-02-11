@@ -29,7 +29,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['35.247.207.104']
 # ALLOWED_HOSTS = ['remediando.com.br']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
