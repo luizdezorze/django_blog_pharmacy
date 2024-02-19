@@ -5,11 +5,13 @@ dj-database-url==2.1.0
 Django==4.1
 django-summernote==0.8.20.0
 flake8==5.0.4
+gunicorn==21.2.0
 mccabe==0.7.0
 mypy==0.971
 mypy-extensions==0.4.3
 mysql-connector-python==8.0.30
 mysqlclient==2.1.1
+packaging==23.2
 Pillow==9.2.0
 protobuf==3.20.1
 pycodestyle==2.9.1

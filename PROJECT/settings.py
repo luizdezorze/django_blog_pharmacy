@@ -17,6 +17,8 @@ import dj_database_url
 from django.contrib.messages import constants
 from dotenv import load_dotenv
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR/".eVar", ".env"))
@@ -26,15 +28,15 @@ load_dotenv(os.path.join(BASE_DIR/".eVar", ".env"))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
-
+# DEBUG = os.environ.get("DJANGO_DEBUG")
+DEBUG = int(os.environ.get("DJANGO_DEBUG", default=0))
 # ALLOWED_HOSTS = ['35.247.207.104']
 # ALLOWED_HOSTS = ['remediando.com.br']
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-ALLOWED_HOSTS += os.environ.get("ALLOWED_HOSTS").split()
+ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(",")
+# ALLOWED_HOSTS += os.environ.get("ALLOWED_HOSTS").split()
 
 # Application definition
 
@@ -94,22 +96,22 @@ WSGI_APPLICATION = 'PROJECT.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'blog_django',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default = "sqlite:///" + os.path.join(BASE_DIR, "db.sqlite3")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog_django',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default = "sqlite:///" + os.path.join(BASE_DIR, "db.sqlite3")
+#     )
+# }
 
 
 # Password validation
